@@ -1,4 +1,3 @@
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -45,49 +44,49 @@ public class Main {
 
                 switch (opcion) {
                     case 1:
-                        System.out.println(temperatura + "°C es igual a " + celsiusToFahrenheit(temperatura) + "°F");
+                        System.out.println(temperatura + "°C es igual a " + (temperatura * 9 / 5 + 32) + "°F");
                         break;
                     case 2:
-                        System.out.println(temperatura + "°C es igual a " + celsiusToKelvin(temperatura) + "K");
+                        System.out.println(temperatura + "°C es igual a " + (temperatura + 273.15) + "K");
                         break;
                     case 3:
-                        System.out.println(temperatura + "°C es igual a " + celsiusToRankine(temperatura) + "°R");
+                        System.out.println(temperatura + "°C es igual a " + ((temperatura + 273.15) * 9 / 5) + "°R");
                         break;
                     case 4:
-                        System.out.println(temperatura + "°C es igual a " + celsiusToReaumur(temperatura) + "°Ré");
+                        System.out.println(temperatura + "°C es igual a " + (temperatura * 4 / 5) + "°Ré");
                         break;
                     case 5:
-                        System.out.println(temperatura + "°F es igual a " + fahrenheitToCelsius(temperatura) + "°C");
+                        System.out.println(temperatura + "°F es igual a " + ((temperatura - 32) * 5 / 9) + "°C");
                         break;
                     case 6:
-                        System.out.println(temperatura + "°F es igual a " + fahrenheitToKelvin(temperatura) + "K");
+                        System.out.println(temperatura + "°F es igual a " + ((temperatura - 32) * 5 / 9 + 273.15) + "K");
                         break;
                     case 7:
-                        System.out.println(temperatura + "°F es igual a " + fahrenheitToRankine(temperatura) + "°R");
+                        System.out.println(temperatura + "°F es igual a " + (temperatura + 459.67) + "°R");
                         break;
                     case 8:
-                        System.out.println(temperatura + "°F es igual a " + fahrenheitToReaumur(temperatura) + "°Ré");
+                        System.out.println(temperatura + "°F es igual a " + ((temperatura - 32) * 4 / 9) + "°Ré");
                         break;
                     case 9:
-                        System.out.println(temperatura + "K es igual a " + kelvinToCelsius(temperatura) + "°C");
+                        System.out.println(temperatura + "K es igual a " + (temperatura - 273.15) + "°C");
                         break;
                     case 10:
-                        System.out.println(temperatura + "K es igual a " + kelvinToFahrenheit(temperatura) + "°F");
+                        System.out.println(temperatura + "K es igual a " + ((temperatura - 273.15) * 9 / 5 + 32) + "°F");
                         break;
                     case 11:
-                        System.out.println(temperatura + "K es igual a " + kelvinToRankine(temperatura) + "°R");
+                        System.out.println(temperatura + "K es igual a " + (temperatura * 9 / 5) + "°R");
                         break;
                     case 12:
-                        System.out.println(temperatura + "K es igual a " + kelvinToReaumur(temperatura) + "°Ré");
+                        System.out.println(temperatura + "K es igual a " + ((temperatura - 273.15) * 4 / 5) + "°Ré");
                         break;
                     case 13:
-                        System.out.println(temperatura + "°R es igual a " + rankineToCelsius(temperatura) + "°C");
+                        System.out.println(temperatura + "°R es igual a " + ((temperatura - 491.67) * 5 / 9) + "°C");
                         break;
                     case 14:
-                        System.out.println(temperatura + "°R es igual a " + rankineToFahrenheit(temperatura) + "°F");
+                        System.out.println(temperatura + "°R es igual a " + (temperatura - 459.67) + "°F");
                         break;
                     case 15:
-                        System.out.println(temperatura + "°R es igual a " + rankineToKelvin(temperatura) + "K");
+                        System.out.println(temperatura + "°R es igual a " + (temperatura * 5 / 9) + "K");
                         break;
                 }
             } catch (InputMismatchException e) {
@@ -96,71 +95,5 @@ public class Main {
             }
         } while (true);
     }
-
-    public static double celsiusToFahrenheit(double celsius) {
-        return celsius * 9 / 5 + 32;
-    }
-
-    public static double celsiusToKelvin(double celsius) {
-        return celsius + 273.15;
-    }
-
-    public static double celsiusToRankine(double celsius) {
-        return (celsius + 273.15) * 9 / 5;
-    }
-
-    public static double celsiusToReaumur(double celsius) {
-        return celsius * 4 / 5;
-    }
-
-    public static double fahrenheitToCelsius(double fahrenheit) {
-        return (fahrenheit - 32) * 5 / 9;
-    }
-
-    public static double fahrenheitToKelvin(double fahrenheit) {
-        return (fahrenheit - 32) * 5 / 9 + 273.15;
-    }
-
-    public static double fahrenheitToRankine(double fahrenheit) {
-        return fahrenheit + 459.67;
-    }
-
-    public static double fahrenheitToReaumur(double fahrenheit) {
-        return (fahrenheit - 32) * 4 / 9;
-    }
-
-    public static double kelvinToCelsius(double kelvin) {
-        return kelvin - 273.15;
-    }
-
-    public static double kelvinToFahrenheit(double kelvin) {
-        return (kelvin - 273.15) * 9 / 5 + 32;
-    }
-
-    public static double kelvinToRankine(double kelvin) {
-        return kelvin * 9 / 5;
-    }
-
-    public static double kelvinToReaumur(double kelvin) {
-        return (kelvin - 273.15) * 4 / 5;
-    }
-
-    public static double rankineToCelsius(double rankine) {
-        return (rankine - 491.67) * 5 / 9;
-    }
-
-    public static double rankineToFahrenheit(double rankine) {
-        return rankine - 459.67;
-    }
-
-    public static double rankineToKelvin(double rankine) {
-        return rankine * 5 / 9;
-    }
-
-    public static double rankineToReaumur(double rankine) {
-        return (rankine - 491.67) * 4 / 9;
-    }
-
 }
-
 
